@@ -1,1 +1,6 @@
 # Computational_Optimization_Assignments
+## Assignment Overview: MST-Based Image Segmentation
+This project implements a graph-based image segmentation and denoising algorithm based on the Felzenszwalb-Huttenlocher method. By treating an image as a graph of interconnected pixels, the algorithm identifies and groups similar regions to simplify visual data and reduce digital noise. Using a Minimum Spanning Tree (MST) approach, the system effectively balances the preservation of sharp edges with the smoothing of textures, making it a powerful tool for both medical imaging denoising and computer vision preprocessing.
+
+## Technical Implementation
+The core logic utilizes a Union-Find (Disjoint Set) data structure with path compression to achieve near-linear computation time. The segmentation is governed by a scale parameter $k$, which defines the threshold for merging neighboring components based on their internal variation and size. Once segments are established, a denoising pass replaces individual pixel intensities with the mean value of their respective components. This process is evaluated using Mean Squared Error (MSE) and Peak Signal-to-Noise Ratio (PSNR) to ensure high-fidelity results while achieving significant data simplification.
